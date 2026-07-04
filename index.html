@@ -730,4 +730,856 @@
             width: 100%;
             padding: 1rem 1.2rem;
             background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group select option {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--highlight), #c73e54);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0;
+            height: 400px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-placeholder p {
+            color: var(--text-muted);
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .map-link:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--gold);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a1a;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a i {
+            font-size: 0.7rem;
+            color: var(--highlight);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                backdrop-filter: blur(20px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .services-grid,
+            .products-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Loading Animation for Form */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">
+            <i class="fas fa-gem"></i>
+            NearMe Glass Shop
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="glass-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star" style="margin-right: 0.5rem;"></i>
+                Premium Glass & Mirror Solutions in Kandivali
+            </div>
+            <h1>Crystal Clear <span>Excellence</span></h1>
+            <p>Your trusted destination for high-quality glass and mirror solutions. From custom-cut glass to designer mirrors, we bring transparency and elegance to every space.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/918097865661" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    Get a Quote
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    Our Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <h2>Our Services</h2>
+            <p>Professional on-site services delivered by our experienced team with precision and care for every project.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Glass Installation</h3>
+                <p>Expert installation of all types of glass including window glass, toughened glass, and decorative glass with precision fitting.</p>
+                <div class="service-tags">
+                    <span class="tag">Window Glass</span>
+                    <span class="tag">Toughened</span>
+                    <span class="tag">Decorative</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3>Mirror Fitting</h3>
+                <p>Professional fitting of plain mirrors, designer mirrors, fancy mirrors, LED mirrors, and standing mirrors.</p>
+                <div class="service-tags">
+                    <span class="tag">LED Mirrors</span>
+                    <span class="tag">Designer</span>
+                    <span class="tag">Bathroom</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Glass Replacement</h3>
+                <p>Quick and reliable glass replacement services for broken or damaged glass in homes and commercial spaces.</p>
+                <div class="service-tags">
+                    <span class="tag">Emergency</span>
+                    <span class="tag">Same Day</span>
+                    <span class="tag">All Types</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <h3>Repairs & Maintenance</h3>
+                <p>Comprehensive repair services for glass doors, shower doors, partitions, and all glass fixtures.</p>
+                <div class="service-tags">
+                    <span class="tag">Shower Doors</span>
+                    <span class="tag">Partitions</span>
+                    <span class="tag">Fixtures</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i class="fas fa-ruler-combined"></i>
+                </div>
+                <h3>Custom Glass Solutions</h3>
+                <p>Tailor-made glass solutions cut to your exact specifications for unique projects and special requirements.</p>
+                <div class="service-tags">
+                    <span class="tag">Custom Cut</span>
+                    <span class="tag">Bespoke</span>
+                    <span class="tag">Precision</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Commercial Services</h3>
+                <p>Office partitions, glass doors, wall panelling, and complete glass solutions for businesses and offices.</p>
+                <div class="service-tags">
+                    <span class="tag">Office</span>
+                    <span class="tag">Partitions</span>
+                    <span class="tag">Wall Panels</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="section-header reveal">
+            <h2>Our Products</h2>
+            <p>Explore our wide range of premium glass and mirror products designed to elevate your living and working spaces.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-border-all"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Window Glass</h3>
+                    <p>High-quality clear and tinted window glass for residential and commercial buildings.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Toughened Glass</h3>
+                    <p>Safety tempered glass 4-5 times stronger than regular glass, ideal for high-traffic areas.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-palette"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Decorative Glass</h3>
+                    <p>Stunning patterned, frosted, and colored glass to add artistic flair to any space.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-cut"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Custom-Cut Glass</h3>
+                    <p>Precision-cut glass tailored to your exact measurements and specifications.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-mirror"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Designer Mirrors</h3>
+                    <p>Elegant plain and decorative wall mirrors that transform your interiors.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-lightbulb"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>LED Mirrors</h3>
+                    <p>Modern backlit LED mirrors with anti-fog technology for bathrooms and dressing areas.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-door-open"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Glass Doors</h3>
+                    <p>Sleek frameless and framed glass doors for homes, offices, and shower enclosures.</p>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image">
+                    <i class="fas fa-columns"></i>
+                    <div class="product-overlay">
+                        <span style="color: var(--gold); font-size: 0.9rem;">View Details</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Glass Partitions</h3>
+                    <p>Modern office and home partitions that create open, light-filled spaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="section-header reveal">
+            <h2>Why Choose Us</h2>
+            <p>We are committed to delivering excellence in every project with quality products and expert craftsmanship.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item reveal">
+                <div class="feature-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Premium Quality</h3>
+                <p>Only the finest materials sourced from trusted manufacturers for lasting durability.</p>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Expert Craftsmanship</h3>
+                <p>Years of experience ensuring flawless installation and finishing on every project.</p>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Reliable Service</h3>
+                <p>On-time delivery and professional on-site services you can count on.</p>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-icon">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3>Competitive Prices</h3>
+                <p>Best value for money with transparent pricing and no hidden costs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-header reveal">
+            <h2>Our Work</h2>
+            <p>Browse through our portfolio of completed projects showcasing our expertise in glass and mirror solutions.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-border-all"></i>
+                    <span>Window Glass Installation</span>
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Residential Window Glass</h4>
+                </div>
+            </div>
+            <div class="gallery-item reveal">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-mirror"></i>
+                    <span>Designer Mirror Setup</span>
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Designer Wall Mirrors</h4>
+                </div>
+            </div>
+            <div class="gallery-item reveal">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-door-open"></i>
+                    <span>Shower Door Installation</span>
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Glass Shower Doors</h4>
+                </div>
+            </div>
+            <div class="gallery-item reveal">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-columns"></i>
+                    <span>Office Partition Work</span>
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Office Glass Partitions</h4>
+                </div>
+            </div>
+            <div class="gallery-item reveal">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>LED Mirror Installation</span>
+                </div>
+                <div class="gallery-overlay">
+                    <h4>LED Bathroom Mirrors</h4>
+                </div>
+            </div>
+            <div class="gallery-item reveal">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-building"></i>
+                    <span>Wall Panelling Project</span>
+                </div>
+                <div class="gallery-overlay">
+                    <h4>Decorative Wall Panelling</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header reveal">
+            <h2>Get In Touch</h2>
+            <p>Ready to transform your space? Contact us today for a free consultation and quote.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <h3>Contact Information</h3>
+                <p>We are here to help you with all your glass and mirror needs. Reach out to us anytime!</p>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Hindustan Naka, Charkop, Kandivali-400067, Maharashtra</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/918097865661" target="_blank">+91 80978 65661</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                        <p>Sunday: 10:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/918097865661" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    Chat on WhatsApp
+                </a>
+            </div>
+
+            <div class="contact-form reveal">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="window-glass">Window Glass</option>
+                            <option value="toughened-glass">Toughened Glass</option>
+                            <option value="decorative-glass">Decorative Glass</option>
+                            <option value="custom-glass">Custom-Cut Glass</option>
+                            <option value="mirror">Mirror Installation</option>
+                            <option value="led-mirror">LED Mirror</option>
+                            <option value="shower-door">Shower Door</option>
+                            <option value="partition">Glass Partition</option>
+                            <option value="glass-door">Glass Door</option>
+                            <option value="wall-panel">Wall Panelling</option>
+                            <option value="repair">Repair Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Describe your requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Visit Our Shop</h3>
+            <p>Hindustan Naka, Charkop, Kandivali-400067, Maharashtra</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hindustan+Naka+Charkop+Kandivali+400067+Maharashtra" target="_blank" class="map-link">
+                <i class="fas fa-location-arrow" style="margin-right: 0.5rem;"></i>
+                Open in Google Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fas fa-gem"></i>
+                    NearMe Glass Shop
+                </a>
+                <p>Your trusted destination for high-quality glass and mirror solutions in Kandivali, Mumbai. We bring transparency and elegance to every space.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Glass Installation</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Mirror Fitting</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Glass Replacement</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Custom Solutions</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Repairs</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="https://wa.me/918097865661" target="_blank"><i class="fas fa-chevron-right"></i> +91 80978 65661</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Hindustan Naka, Charkop</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Kandivali-400067, MH</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> NearMe Glass Shop. All rights reserved. | Premium Glass & Mirror Solutions</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fab fa-whatsapp"></i>
+        <span>Message sent! We will contact you soon.</span>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Generate floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 80 + 20;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const toast = document.getElementById('toast');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Show loading
+            submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.innerHTML = 'Send Enquiry';
+                submitBtn.disabled = false;
+                contactForm.reset();
+
+                // Show toast
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 4000);
+            }, 1500);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Product card click - show toast
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', () => {
+                toast.querySelector('span').textContent = 'Contact us on WhatsApp for pricing!';
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    toast.querySelector('span').textContent = 'Message sent! We will contact you soon.';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
